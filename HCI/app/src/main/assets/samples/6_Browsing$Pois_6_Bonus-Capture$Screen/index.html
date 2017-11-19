@@ -1,0 +1,170 @@
+
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>My ARchitect World</title> 
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta http-equiv="Content-Type" content="application/json; charset=utf-8">
+        <meta content="width=device-width,initial-scale=1,maximum-scale=5,user-scalable=yes" name="viewport">
+
+        <script src="architect://architect.js"></script>
+        <link rel="stylesheet" href="css/poi-radar.css" />
+        <link rel="stylesheet" href="font-awesome-4.5.0/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="bower_components/nativeDroid2/css/nativedroid2.css" />
+        
+         <link rel="stylesheet" href="bower_components/nativeDroid2/css/nativedroid2.color.light-blue.css" /> 
+
+        <link rel="stylesheet" href="jquery/jquery-mobile-transparent-ui-overlay.css" />
+
+
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
+        <script src="jquery.mobile-1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <script src="bower_components/nativeDroid2/js/nativedroid2.js"></script>
+        <script src="bower_components/nativeDroid2/nd2settings.js"></script>
+<!--         <link rel="stylesheet" href="/vendor/waves/waves.min.css" />
+ -->        
+
+                
+     <!-- marker representation-->
+        <script src="js/marker.js"></script>
+
+        <!-- World logic-->
+        <script type="text/javascript" src="js/capturescreen.js"></script>
+
+        <!-- radar component -->
+        <script type="text/javascript" src="js/radar.js"></script>
+        <script type="text/javascript" src="js/myjsondata.js"></script>
+
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+function initialize() {
+   if (World.userLocation == null) {
+     var mapProp = {
+    center:new google.maps.LatLng(31.472338, 74.410875),
+    zoom:16,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+} else {
+  var mapProp = {
+    center:new google.maps.LatLng(World.userLocation['latitude'],World.userLocation['longitude']),
+    zoom:16,
+    mapTypeId:google.maps.MapTypeId.ROADMAP
+  };
+}
+  var marker=new google.maps.Marker({
+  position:mapProp.center
+  });
+
+  var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  marker.setMap(map);
+
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+        
+    </head>
+    <body>
+
+        <div data-role="page" id="page1" style="background: none; " >
+
+          
+            
+            <div class="radarContainer_left" id="radarContainer"></div>
+            <!-- <div role="main" class="ui-content"  data-wow-delay="0.2s">
+
+                
+            
+            </div> -->
+
+        
+            
+                <!-- h4>Header Example</h4>
+                <p>See an animated example on the top. You can simply remove the WOW.js-Tags to avoid animation.</p>
+
+                <h4>Footer Example</h4>
+                <p>See bottom :-)</p>
+
+                <h4>Extra: bottom-sheet</h4>
+                <p>Click the top-right-corner</p>
+
+                <nd2-ad data-banner="sample.banner"></nd2-ad> -->
+
+
+            <div data-role="footer" data-position="fixed">
+
+                <div class="row center-xs">
+                    <div class="col-xs-4">
+                        <div class="box">
+                            <a href="javascript: World.showRange();" class="ui-btn ui-mini nd2-btn-icon-block"><i class='zmdi zmdi-settings'></i> Range</a>
+                        </div>
+                    </div>
+                    <div class="col-xs-4">
+                        <div class="box">
+                            <a href="javascript: World.captureScreen()" class="ui-btn ui-mini nd2-btn-icon-block"><i class='zmdi zmdi-camera'></i> Snapshot</a>
+                        </div>
+                    </div>
+                   <div class="col-xs-4">
+                    <div class="box">
+                            <a href="javascript: World.setManualLocation()" style="word-wrap: break-word;"class="ui-btn ui-mini nd2-btn-icon-block"><i class='zmdi zmdi-edit'></i>Map</a>
+                        </div>
+                   
+                
+            </div>
+        </div>
+
+
+            </div>
+
+<div data-role="panel" id="panel-poidetail" class="ui-bottom-sheet ui-bottom-sheet-list" data-animate="true" data-position='bottom' data-display="overlay">
+<div class='row around-xs'>
+    <div class='col-xs-auto'>
+        <a href='#' id="poi-detail-title" class='ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button' data-ajax='false'><i class='zmdi zmdi-assignment zmd-2x'></i></a>
+    </div>
+    
+
+    <div class='col-xs-auto'>
+        <a href='#' id="poi-detail-description" class='ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button' data-ajax='false'><i class='zmdi zmdi-fire zmd-2x'></i></a>
+    </div>
+    <div class='col-xs-auto'>
+        <a href='#' id="poi-detail-distance"class='ui-bottom-sheet-link ui-btn ui-btn-inline waves-effect waves-button waves-effect waves-button' data-ajax='false'><i class='zmdi zmdi-cloud-outline-alt zmd-2x' style="text-align:center;"></i>Distance: </a>
+</a>
+    </div>
+    
+</div>
+</div>
+
+<div data-role="panel" id="bottomsheetlist" class="ui-bottom-sheet ui-bottom-sheet-list" data-animate="false" data-position='bottom' data-display="overlay">    <div class='col-xs-auto'>
+            <div id="googleMap" style="width:325px;height:200px;"></div>
+        </div>
+
+
+</div>
+
+<div data-role="panel" id="panel-distance" class="ui-bottom-sheet ui-bottom-sheet-list" data-animate="true" data-position='bottom' data-display="overlay">
+<div class='row around-xs'>
+     <div data-role="content">
+
+                        <!-- Range in m/km-->
+                        <h4> Range: <a id="panel-distance-value"></a></h4>
+
+                        <!-- Amount of visible places -->
+                        <h4> Visible: <a id="panel-distance-places"></a></h4>
+
+                        <!-- default slider -->
+                        <input id="panel-distance-range" type="range" data-highlight="true" name="rangeSlider" min="0" max="100" value="50" data-show-value="false" step="5" data-popup-enabled="false">
+                    </div>
+
+    
+</div>
+</div>
+            <!-- range panel -->
+          
+
+        </div>
+
+
+
+    </body>
+</html>

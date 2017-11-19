@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android               = "http://schemas.android.com/apk/res/android"
+    android:layout_height       = "wrap_content"
+    android:layout_width        = "fill_parent"
+    android:paddingTop          = "1.5dp"
+    android:paddingBottom       = "1.5dp">
+
+    <ImageView
+        android:id                      = "@+id/list_picture"
+        android:layout_width            = "100dp"
+        android:layout_height           = "100dp"
+        android:layout_alignParentLeft  = "true"/>
+
+    <RelativeLayout
+        android:id              = "@+id/list_textlist"
+        android:layout_width    = "fill_parent"
+        android:layout_height   = "100dp"
+        android:orientation     = "vertical"
+        android:layout_toRightOf= "@+id/list_picture"
+        android:paddingLeft     = "10dp"
+        android:paddingTop      = "4dp">
+
+        <TextView
+            android:id                      = "@+id/list_name"
+            android:layout_width            = "match_parent"
+            android:layout_height           = "wrap_content"
+            android:textSize                = "20sp"
+            android:layout_alignParentTop   = "true"/>
+
+        <TextView
+            android:id              = "@+id/list_description"
+            android:layout_width    = "match_parent"
+            android:layout_height   = "fill_parent"
+            android:layout_below    = "@+id/list_name"
+            android:textSize        = "13sp"
+            android:maxLines        = "4"
+            android:ellipsize       = "end"/>
+    </RelativeLayout>
+</RelativeLayout>

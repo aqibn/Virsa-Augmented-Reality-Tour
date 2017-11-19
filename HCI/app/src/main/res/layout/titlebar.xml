@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width    = "match_parent"
+    android:layout_height   = "wrap_content"
+    android:orientation     = "horizontal"
+    android:background      = "#FF9B1B1E"
+    android:paddingLeft     = "4dp">
+
+    <LinearLayout
+        android:layout_width    = "0dp"
+        android:layout_height   = "match_parent"
+        android:gravity         = "center"
+        android:layout_weight   = "0.12">
+
+        <ImageView
+            android:id                      = "@+id/main_app_icon"
+            android:layout_gravity          = "center"
+            android:layout_width            = "30dp"
+            android:layout_height           = "30dp"
+            android:src                     = "@drawable/icon_trail"
+            android:onClick                 = "goHome"
+            />
+    </LinearLayout>
+
+    <FrameLayout
+        android:id                  = "@+id/main_searchbar"
+        android:layout_width        = "0dp"
+        android:layout_height       = "match_parent"
+        android:orientation         = "horizontal"
+        android:layout_weight       = "0.8">
+
+        <TextView
+            android:id              = "@+id/main_title"
+            android:layout_height   = "match_parent"
+            android:layout_width    = "fill_parent"
+            android:gravity         = "start|center_vertical"
+            android:textSize        = "24sp"
+            android:textColor       = "@android:color/white"
+            android:paddingLeft     = "8dp"
+            android:paddingRight    = "42dp"
+            android:maxLines        = "1"
+            android:ellipsize       = "end"/>
+
+        <AutoCompleteTextView
+            android:id              = "@+id/main_search"
+            android:layout_width    = "fill_parent"
+            android:layout_height   = "match_parent"
+            android:hint            = "Search"
+            android:inputType       = "text"
+            android:textColor       = "@android:color/white"
+            android:imeOptions      = "actionSearch"
+            android:visibility      = "gone"
+            android:paddingLeft     = "8dp"
+            android:paddingRight    = "42dp"/>
+
+        <LinearLayout
+            android:layout_width    = "40dp"
+            android:layout_height   = "match_parent"
+            android:layout_gravity  = "end"
+            android:gravity         = "center_vertical|right">
+
+            <ImageView
+                android:id                      = "@+id/main_search_icon"
+                android:layout_gravity          = "center"
+                android:layout_width            = "30dp"
+                android:layout_height           = "30dp"
+                android:src                     = "@drawable/icon_search"
+                android:onClick                 = "performSearch"
+                />
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width    = "0dp"
+        android:layout_height   = "match_parent"
+        android:gravity         = "center"
+        android:layout_weight   = "0.13"
+        android:padding         = "1dp">
+
+        <ImageView
+            android:id                      = "@+id/main_augmented_icon"
+            android:layout_gravity          = "center"
+            android:layout_width            = "match_parent"
+            android:layout_height           = "match_parent"
+            android:src                     = "@drawable/icon_augmented"
+            android:onClick                 = "performAugmented"
+            />
+    </LinearLayout>
+</LinearLayout>

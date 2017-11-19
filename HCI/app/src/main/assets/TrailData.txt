@@ -1,0 +1,28 @@
+{
+	"data": 
+	[
+		{"name": "Mughal Trail", 
+		"image_src": ["badshahi_main", "buddhu_main", "dai_anga_tomb_main"], 
+		"site_names": ["Badshahi Mosque", "Buddhu's Tomb", "Dai Anga Tomb"], 
+		"popularity": 1,
+		"numPlaces": 3},
+
+		{"name": "Western Trail", 
+		"image_src": ["asif_khan_main", "dai_anga_mosque_main"], 
+		"site_names": ["Tombs of Asif Khan", "Dai Anga Mosque"], 
+		"popularity": 3,
+		"numPlaces": 2},
+
+		{"name": "The Gates Trail", 
+		"image_src": ["bhati_gate_main", "delhi_gate_main", "kashmiri_gate_main"], 
+		"site_names": ["Bhati Gate", "Delhi Gate", "Kashmiri Gate"], 
+		"popularity": 5,
+		"numPlaces": 3},
+
+		{"name": "Random Walk Trail", 
+		"image_src": ["wazir_khan_main", "chauburji_main", "akbar_sarai_main", "dai_anga_mosque_main", "badshahi_main"], 
+		"site_names": ["Wazir Khan Mosque", "Chauburji", "Akbar Sarai", "Dai Anga Mosque", "Badshahi Mosque"], 
+		"popularity": 4,
+		"numPlaces": 5}
+	]
+}

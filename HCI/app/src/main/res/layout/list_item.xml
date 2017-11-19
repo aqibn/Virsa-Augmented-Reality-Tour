@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android               = "http://schemas.android.com/apk/res/android"
+    android:layout_height       = "wrap_content"
+    android:layout_width        = "fill_parent"
+    android:paddingTop          = "1.5dp"
+    android:paddingBottom       = "1.5dp">
+
+    <ImageView
+        android:id                      = "@+id/list_picture"
+        android:layout_width            = "100dp"
+        android:layout_height           = "100dp"
+        android:layout_alignParentLeft  = "true"/>
+
+    <RelativeLayout
+        android:id              = "@+id/list_textlist"
+        android:layout_width    = "fill_parent"
+        android:layout_height   = "100dp"
+        android:orientation     = "vertical"
+        android:layout_toRightOf= "@+id/list_picture"
+        android:paddingLeft     = "10dp"
+        android:paddingTop      = "4dp">
+
+        <TextView
+            android:id                      = "@+id/list_name"
+            android:layout_width            = "match_parent"
+            android:layout_height           = "wrap_content"
+            android:textSize                = "18sp"
+            android:layout_alignParentTop   = "true"/>
+
+        <TextView
+            android:id              = "@+id/list_address"
+            android:layout_width    = "match_parent"
+            android:layout_height   = "fill_parent"
+            android:layout_below    = "@+id/list_name"
+            android:textSize        = "13sp"
+            android:maxLines        = "1"
+            android:ellipsize       = "end"/>
+
+        <LinearLayout
+            android:id             = "@+id/popularity"
+            android:layout_width   = "match_parent"
+            android:layout_height  = "wrap_content"
+            android:orientation    = "horizontal"
+            android:layout_above   = "@+id/distance">
+
+            <ImageView
+                android:id                      = "@+id/popularity_icon1"
+                android:layout_width            = "20dp"
+                android:layout_height           = "20dp"
+                android:src                     = "@drawable/icon_popular_full"
+                android:layout_alignParentLeft  = "true"/>
+            <ImageView
+                android:id                      = "@+id/popularity_icon2"
+                android:layout_width            = "20dp"
+                android:layout_height           = "20dp"
+                android:src                     = "@drawable/icon_popular_full"
+                android:layout_toRightOf        = "@+id/popularity_icon1"/>
+            <ImageView
+                android:id                      = "@+id/popularity_icon3"
+                android:layout_width            = "20dp"
+                android:layout_height           = "20dp"
+                android:src                     = "@drawable/icon_popular_full"
+                android:layout_toRightOf        = "@+id/popularity_icon2"/>
+            <ImageView
+                android:id                      = "@+id/popularity_icon4"
+                android:layout_width            = "20dp"
+                android:layout_height           = "20dp"
+                android:src                     = "@drawable/icon_popular_full"
+                android:layout_toRightOf        = "@+id/popularity_icon3"/>
+            <ImageView
+                android:id                      = "@+id/popularity_icon5"
+                android:layout_width            = "20dp"
+                android:layout_height           = "20dp"
+                android:src                     = "@drawable/icon_popular_full"
+                android:layout_toRightOf        = "@+id/popularity_icon4"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id                          = "@+id/distance"
+            android:layout_width                = "match_parent"
+            android:layout_height               = "wrap_content"
+            android:orientation                 = "horizontal"
+            android:layout_alignParentBottom    = "true"
+            android:paddingBottom               = "2dp">
+
+            <ImageView
+                android:id              = "@+id/list_icon"
+                android:layout_width    = "20dp"
+                android:layout_height   = "20dp"
+                android:src             = "@drawable/icon_location"
+                android:scaleType       = "centerInside"/>
+
+            <TextView
+                android:id              = "@+id/list_value"
+                android:layout_width    = "fill_parent"
+                android:layout_height   = "match_parent"
+                android:paddingLeft     = "5dp"/>
+        </LinearLayout>
+    </RelativeLayout>
+</RelativeLayout>

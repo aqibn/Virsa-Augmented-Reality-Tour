@@ -1,0 +1,40 @@
+{
+  "name": "nativeDroid2",
+  "version": "2.0.2",
+  "homepage": "http://nativedroid.godesign.ch/material/",
+  "authors": [
+    "Raphael Wildhaber"
+  ],
+  "description": "nativeDroid2 is a jQueryMobile Template inspired by Material Design",
+  "main": "js/nativeDroid.js",
+  "moduleType": [
+    "amd",
+    "globals"
+  ],
+  "keywords": [
+    "materials",
+    "android"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "vendor",
+    "examples"
+  ],
+  "dependencies": {
+    "Waves": "waves#~0.7.2",
+    "jquery": "~2.1.4",
+    "jquery-ui": "~1.11.4"
+  },
+  "_release": "2.0.2",
+  "_resolution": {
+    "type": "version",
+    "tag": "v2.0.2",
+    "commit": "0bd9d3f67a98fca7ffb31e941dad4429bdcdd2d6"
+  },
+  "_source": "git://github.com/godesign/nativeDroid2.git",
+  "_target": "~2.0.2",
+  "_originalSource": "nativeDroid2",
+  "_direct": true
+}

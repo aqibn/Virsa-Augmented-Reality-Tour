@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android               = "http://schemas.android.com/apk/res/android"
+    android:id                  = "@+id/linlay_0"
+    android:layout_width        = "match_parent"
+    android:layout_height       = "match_parent"
+    android:orientation         = "vertical"
+    android:background          = "@color/app_background">
+
+    <LinearLayout
+        android:layout_width    = "match_parent"
+        android:layout_height   = "0dp"
+        android:orientation     = "horizontal"
+        android:layout_weight   = "0.09"
+        android:background      = "@color/header_background"
+        android:paddingLeft     = "4dp"
+        android:paddingRight    = "8dp">
+
+        <LinearLayout
+            android:layout_width    = "0dp"
+            android:layout_height   = "match_parent"
+            android:gravity         = "center"
+            android:layout_weight   = "0.12">
+
+            <ImageView
+                android:id                      = "@+id/main_app_icon"
+                android:layout_gravity          = "center"
+                android:layout_width            = "30dp"
+                android:layout_height           = "30dp"
+                android:src                     = "@drawable/icon_logo"
+                android:onClick                 = "goHome"
+                />
+        </LinearLayout>
+
+        <FrameLayout
+            android:id                  = "@+id/main_searchbar"
+            android:layout_width        = "0dp"
+            android:layout_height       = "match_parent"
+            android:orientation         = "horizontal"
+            android:layout_weight       = "0.8">
+
+            <TextView
+                android:id              = "@+id/main_title"
+                android:layout_height   = "match_parent"
+                android:layout_width    = "fill_parent"
+                android:gravity         = "start|center_vertical"
+                android:textSize        = "24sp"
+                android:textColor       = "@android:color/white"
+                android:paddingLeft     = "8dp"
+                android:paddingRight    = "42dp"
+                android:maxLines        = "1"
+                android:ellipsize       = "end"/>
+
+            <AutoCompleteTextView
+                android:id              = "@+id/main_search"
+                android:layout_width    = "fill_parent"
+                android:layout_height   = "match_parent"
+                android:hint            = "Search"
+                android:inputType       = "text"
+                android:textColor       = "@android:color/white"
+                android:imeOptions      = "actionSearch"
+                android:visibility      = "gone"
+                android:paddingLeft     = "8dp"
+                android:paddingRight    = "42dp"
+                android:textColorHint   = "@color/search_hint"/>
+
+            <LinearLayout
+                android:layout_width    = "40dp"
+                android:layout_height   = "match_parent"
+                android:layout_gravity  = "end"
+                android:gravity         = "center_vertical|right">
+
+                <ImageView
+                    android:id                      = "@+id/main_search_icon"
+                    android:layout_gravity          = "center"
+                    android:layout_width            = "30dp"
+                    android:layout_height           = "30dp"
+                    android:src                     = "@drawable/icon_search"
+                    android:onClick                 = "performSearch"
+                    />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width    = "match_parent"
+        android:layout_height   = "0dp"
+        android:layout_weight   = "0.76"
+        android:orientation     = "vertical"
+        android:padding         = "8dp">
+
+        <FrameLayout
+            android:layout_width    = "match_parent"
+            android:layout_height   = "0dp"
+            android:layout_weight   = "0.25"
+            android:clickable       = "false">
+
+            <com.daimajia.slider.library.SliderLayout
+                android:id              = "@+id/main_slider"
+                android:layout_width    = "match_parent"
+                android:layout_height   = "match_parent"
+                android:textAlignment   = "center"
+                />
+
+            <com.daimajia.slider.library.Indicators.PagerIndicator
+                android:id              = "@+id/custom_indicator"
+                style                   = "@style/AndroidImageSlider_Attractive_Rect_Blue"
+                android:layout_gravity  = "center|bottom"
+                />
+
+        </FrameLayout>
+
+        <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.005"/>
+
+        <LinearLayout
+            android:id                  = "@+id/main_nearestbar"
+            android:layout_width        = "match_parent"
+            android:layout_height       = "0dp"
+            android:layout_weight       = "0.08"
+            android:orientation         = "horizontal">
+
+            <FrameLayout
+                android:layout_width        = "0dp"
+                android:layout_height       = "match_parent"
+                android:onClick             = "redirectNearest"
+                android:orientation         = "horizontal"
+                android:layout_weight       = "0.5"
+                android:background          = "@color/windowBackground">
+
+                <TextView
+                    android:id              = "@+id/main_nearestbar_2"
+                    android:layout_width    = "match_parent"
+                    android:layout_height   = "match_parent"
+                    android:text            = "Nearby"
+                    android:textSize        = "18dp"
+                    android:paddingLeft     = "20dp"
+                    android:gravity         = "center"
+                    android:focusableInTouchMode="true" />
+
+                <ImageView
+                    android:id              = "@+id/main_nearestbar_1"
+                    android:layout_width    = "38dp"
+                    android:layout_height   = "38dp"
+                    android:layout_gravity  = "center_vertical|start"
+                    android:paddingLeft     = "6dp"
+                    android:src             = "@drawable/icon_location"/>
+            </FrameLayout>
+
+            <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="0.01"/>
+
+            <FrameLayout
+                android:layout_width        = "0dp"
+                android:layout_height       = "match_parent"
+                android:onClick             = "redirectPopular"
+                android:orientation         = "horizontal"
+                android:layout_weight       = "0.5"
+                android:background          = "@color/windowBackground">
+
+                <ImageView
+                    android:id              = "@+id/main_nearestbar_3"
+                    android:layout_width    = "38dp"
+                    android:layout_height   = "38dp"
+                    android:layout_gravity  = "center_vertical|start"
+                    android:paddingLeft     = "8dp"
+                    android:src             = "@drawable/icon_popular_full"/>
+
+                <TextView
+                    android:id              = "@+id/main_nearestbar_4"
+                    android:layout_width    = "match_parent"
+                    android:layout_height   = "match_parent"
+                    android:text            = "Popular"
+                    android:textSize        = "18dp"
+                    android:paddingLeft     = "20dp"
+                    android:gravity         = "center"/>
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.005"/>
+
+        <LinearLayout
+            android:id                  = "@+id/main_favoritebar"
+            android:layout_width        = "match_parent"
+            android:layout_height       = "0dp"
+            android:layout_weight       = "0.08"
+            android:orientation         = "horizontal">
+
+            <FrameLayout
+                android:layout_width        = "0dp"
+                android:layout_height       = "match_parent"
+                android:onClick             = "redirectFavourites"
+                android:orientation         = "horizontal"
+                android:layout_weight       = "0.5"
+                android:background          = "@color/windowBackground">
+
+                <TextView
+                    android:id              = "@+id/main_favouritebar_2"
+                    android:layout_width    = "match_parent"
+                    android:layout_height   = "match_parent"
+                    android:text            = "Favourites"
+                    android:textSize        = "18dp"
+                    android:paddingLeft     = "20dp"
+                    android:gravity         = "center"/>
+
+                <ImageView
+                    android:id              = "@+id/main_favouritebar_1"
+                    android:layout_width    = "38dp"
+                    android:layout_height   = "38dp"
+                    android:layout_gravity  = "center_vertical|start"
+                    android:paddingLeft     = "6dp"
+                    android:src             = "@drawable/icon_favourite_full"/>
+            </FrameLayout>
+
+            <TextView android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="0.01"/>
+
+            <FrameLayout
+                android:layout_width        = "0dp"
+                android:layout_height       = "match_parent"
+                android:onClick             = "performAugmented"
+                android:orientation         = "horizontal"
+                android:layout_weight       = "0.5"
+                android:background          = "@color/windowBackground">
+
+                <ImageView
+                    android:id              = "@+id/main_favouritebar_3"
+                    android:layout_width    = "38dp"
+                    android:layout_height   = "38dp"
+                    android:layout_gravity  = "center_vertical|start"
+                    android:paddingLeft     = "8dp"
+                    android:src             = "@drawable/icon_augmented"/>
+
+                <TextView
+                    android:id              = "@+id/main_favouritebar_4"
+                    android:layout_width    = "match_parent"
+                    android:layout_height   = "match_parent"
+                    android:text            = "Around Me"
+                    android:textSize        = "18dp"
+                    android:paddingLeft     = "20dp"
+                    android:gravity         = "center"/>
+            </FrameLayout>
+        </LinearLayout>
+
+        <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.005"/>
+
+        <LinearLayout
+            android:layout_width    = "match_parent"
+            android:layout_height   = "0dp"
+            android:layout_weight   = "0.2"
+            android:background      = "@color/windowBackground"
+            android:orientation     = "horizontal"
+            android:onClick         = "redirectTrails">
+
+            <RelativeLayout
+                android:id              = "@+id/trail_box"
+                android:layout_width    = "0dp"
+                android:layout_height   = "match_parent"
+                android:layout_weight   = "0.6"
+                android:padding         = "10dp"
+                android:paddingLeft     = "16dp">
+
+                <ImageView
+                    android:id              = "@+id/trail_icon"
+                    android:layout_width    = "32dp"
+                    android:layout_height   = "32dp"
+                    android:src             = "@drawable/icon_trail_white"/>
+
+                <TextView
+                    android:layout_width        = "wrap_content"
+                    android:layout_height       = "wrap_content"
+                    android:textSize            = "24dp"
+                    android:text                = "Trails"
+                    android:layout_toRightOf    = "@+id/trail_icon"
+                    android:layout_alignBottom  = "@+id/trail_icon"
+                    android:paddingLeft         = "10dp"/>
+
+                <TextView
+                    android:layout_width    = "wrap_content"
+                    android:layout_height   = "wrap_content"
+                    android:text            = "Explore a part of history..."
+                    android:textSize        = "14dp"
+                    android:layout_below    = "@id/trail_icon"
+                    android:paddingTop      = "3dp"/>
+
+                <TextView
+                    android:layout_width            = "wrap_content"
+                    android:layout_height           = "wrap_content"
+                    android:layout_alignParentBottom= "true"
+                    android:text                    = "see all..."
+                    android:textSize                = "14dp"
+                    android:paddingBottom           = "11dp"
+                    android:textColor               = "@android:color/holo_blue_light"/>
+                
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width    = "0dp"
+                android:layout_height   = "match_parent"
+                android:gravity         = "center"
+                android:layout_weight   = "0.4">
+
+                <ImageView
+                    android:layout_gravity          = "center"
+                    android:layout_width            = "140dp"
+                    android:layout_height           = "140dp"
+                    android:src                     = "@drawable/icon_collage"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

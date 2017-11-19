@@ -1,0 +1,16 @@
+{
+	"data": 
+	[
+		{"name": "* Mughal *",  
+		"site_names": ["Badshahi Mosque", "Akbar Sarai", "Wazir Khan Mosque"]},
+
+		{"name": "* Calligraphy *",  
+		"site_names": ["Delhi Gate", "Chauburji", "Ali Mardan Khan's Tomb", "Tombs of Asif Khan"]},
+
+		{"name": "* Fancy *",  
+		"site_names": ["Kashmiri Gate", "Dai Anga Tomb", "Delhi Gate", "Badshahi Mosque"]},
+
+		{"name": "* super cool awesome *",  
+		"site_names": ["Badshahi Mosque", "LUMS"]}
+	]
+}
